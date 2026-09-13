@@ -64,5 +64,16 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Agrist is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
+AGRIST Inc. (AGRIST株式会社) is a Japanese deep-tech agricultural robotics company founded in October
+2019 and headquartered in Shintomi-cho, Miyazaki Prefecture. It builds AI-equipped automatic
+harvesting robots for greenhouse bell peppers and cucumbers — the "L" robot travels on overhead
+wires rather than ground rails — alongside AGRIST Ai, a cultivation-support and yield-forecasting
+system, its own AI robot farms, and the Smart Agri University (SAU) training program.
+
+**No API surface.** As of 2026-09-13 AGRIST publishes no developer program, public API, SDK or
+machine-readable API contract. Contract discovery returned 404 for `/openapi.json`, `/llms.txt`,
+`/apis.json` and every named `/.well-known/` path on both `agrist.com` and `www.agrist.com`; see
+`x-coverage` in `apis.yml` and `well-known/agrist-well-known.yml` for the probe record.
+
+- https://agrist.com/
 - https://equityzen.com/company/agrist

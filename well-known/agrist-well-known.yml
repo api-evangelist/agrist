@@ -1,0 +1,131 @@
+generated: '2026-09-13'
+method: probed
+source: >-
+  Live anonymous GET of the named /.well-known/ path list against every host this record knows.
+  AGRIST publishes no API, so apis[] is empty and there is no baseURL host and no OpenAPI servers[]
+  host to probe; the corporate WordPress site (agrist.com and www.agrist.com) is the entire probe
+  surface, and crt.sh shows only one other subdomain ever issued a certificate — farmpr.agrist.com,
+  which no longer resolves in DNS. Every path on both hosts returned a hard 404 whose body is the
+  site's own Japanese WordPress 404 template (50,715 bytes, identical on every path), so there is no
+  path-echoing and no soft-404 catch-all. NO WellKnown or SecurityTxt pointer is emitted: nothing is
+  served, and this file records that absence rather than claiming a surface.
+hosts:
+- host: agrist.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/ucp.json
+    status: 404
+    file: null
+  - path: /.well-known/acp.json
+    status: 404
+    file: null
+  - path: /.well-known/aauth-resource.json
+    status: 404
+    file: null
+  - path: /.well-known/apis.json
+    status: 404
+    file: null
+  - path: /apis.json
+    status: 404
+    file: null
+  - path: /apis.yml
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+  - path: /llms.txt
+    status: 404
+    file: null
+- host: www.agrist.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/ucp.json
+    status: 404
+    file: null
+  - path: /.well-known/acp.json
+    status: 404
+    file: null
+  - path: /.well-known/aauth-resource.json
+    status: 404
+    file: null
+  - path: /.well-known/apis.json
+    status: 404
+    file: null
+  - path: /apis.json
+    status: 404
+    file: null
+  - path: /apis.yml
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+  - path: /llms.txt
+    status: 404
+    file: null
+hit_count: 0
+path_echo_control: passed
+notes:
+  negative_control: >-
+    /.well-known/agrist-negative-control-7f3ab91c.json returned 404 on both hosts, so no hit on this
+    host set could be a path-echo artifact.
+  soft_404_control: >-
+    Every 404 body is byte-identical at 50,715 bytes (the Japanese WordPress theme 404 page), which
+    is the same body served for /openapi.json, /llms.txt and /apis.json. No catch-all 200s were
+    observed anywhere on the host.
+  robots_txt: >-
+    https://agrist.com/robots.txt (HTTP 200, 111 bytes) is the WordPress default — "User-agent: * /
+    Disallow: /wp-admin/ / Allow: /wp-admin/admin-ajax.php" plus a Sitemap line pointing at
+    https://agrist.com/wp-sitemap.xml. No AI-crawler directives either way; the site is open to
+    agents at the crawl layer.
+  wp_json: >-
+    https://agrist.com/wp-json/ returns HTTP 200 with 340,889 bytes of WordPress core REST API
+    discovery (231 routes, 13 namespaces). Every namespace is CMS infrastructure or a plugin —
+    wp/v2, oembed/1.0, wp-site-health/v1, wp-block-editor/v1, wp-abilities/v1, google-site-kit/v1,
+    wordfence/v1, wordfence-login-security/v1, ai1wm/v1, gtm4wp/v2, siteorigin-panels/v1, sowb/v1,
+    regenerate-thumbnails/v1. This is WordPress's API, not an AGRIST product API, and no pointer is
+    emitted for it.
+  a2a: >-
+    No agent card at either the canonical /.well-known/agent-card.json or the legacy
+    /.well-known/agent.json on either host, so no a2a/ artifact was written.

@@ -1,0 +1,15 @@
+generated: '2026-09-13'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: agrist.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct 26 00:00:01 2026 GMT
+  hsts: false
+domains:
+- domain: agrist.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: false
