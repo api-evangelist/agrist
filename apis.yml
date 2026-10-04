@@ -32,7 +32,7 @@ tags:
 - AgTech
 - Robotics
 - Artificial Intelligence
-- Computer-Vision
+- Computer Vision
 - Smart Farming
 - Greenhouse
 - Automation
@@ -52,6 +52,7 @@ tags_raw:
 - Food Tech
 - Deep Tech
 - Japan
+- Computer-Vision
 apis: []
 maintainers:
 - FN: Kin Lane
